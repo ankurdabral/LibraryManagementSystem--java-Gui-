@@ -175,7 +175,7 @@ public class BrowseBook extends JPanel{
 			available.setText("False");
 		}
 		if (book.getBorrowerID() == null){
-			borrowerID.setText("null");
+			borrowerID.setText("");
 		}
 		else{
 			borrowerID.setText(book.getBorrowerID().toString());

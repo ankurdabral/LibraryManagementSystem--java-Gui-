@@ -34,12 +34,12 @@ public class SearchKeywordController implements DocumentListener {
 	public void search() {
 		// variable to store input key
 		String value = view.getBrowseBookView().getKeyword();
-
+		String lowerCaseValue = value.toLowerCase();
 		// store the books related to keyword
 		ArrayList<LibraryBook> book = new ArrayList<LibraryBook>();
 
 		for (LibraryBook b : model.getAllBooks()) { // for each library book
-			if (((Book) b).getTitle().contains(value)) {
+			if ((((Book) b).getTitle().toLowerCase()).contains(lowerCaseValue)) {
 								// if title contains keyword
 				book.add(b);
 			}
