@@ -195,6 +195,9 @@ public class ReturnBook extends JPanel{
 	public void clearItems() {
 		memberID.clearItems();
 		days.clearItems();
+		bookID.setText("");
+		bookTitle.setText("");
+		bookAuthor.setText("");
 		returnButton.setEnabled(false);//disable return book button
 	}
 

@@ -137,10 +137,11 @@ public class PayFine extends JPanel{
 				this.add(PayFine);
 	}
 	
+	Collection<LibraryMember> memberList;
 	// method to update member list when loading data
 	public void updateMemberList(Collection<LibraryMember> member)
 	{
-		
+		memberList = member;
 		selectMemberController.setIsActive(false);//setting listListner
 								//to false to update error free loading
 		data.clear();
@@ -183,10 +184,26 @@ public class PayFine extends JPanel{
 	public String getMemberID(){
 		return memberID.getText();
 	}
-
+	
+	public void clearMemberList(){
+		selectMemberController.setIsActive(false);//setting listListner
+		//to false to update error free loading
+		data.clear();
+		for(LibraryMember m : memberList ){
+			data.addElement(m.getMemberID());
+	}
+selectMemberController.setIsActive(true);// setting listner back
+							//to false
+	}
+	
 	// clears item values in field
 	public void clearItems() {
 		paid.clearItems();
+		memberID.setText("");
+		memberName.setText("");
+		memberContact.setText("");
+		memberOwing.setText("");
+		clearMemberList();
 		payFineButton.setEnabled(false);// disable pay fine button
 
 	}

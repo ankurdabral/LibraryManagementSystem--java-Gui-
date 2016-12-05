@@ -38,6 +38,7 @@ public class ReturnBookController implements ActionListener{
 			if (result == true){
 				JOptionPane.showMessageDialog((JFrame) view, 
 						"Book Successfully returned for " + memberID);
+				view.getReturnBookView().clearItems();
 			}
 			else{
 				JOptionPane.showMessageDialog((JFrame) view, 
